@@ -1,0 +1,14 @@
+spring:
+  application:
+    name:"configserver"
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          # you can also add filepath and git repo
+          search-locations: "classpath:/config"
+server:
+  port: 8071
+
