@@ -4,7 +4,6 @@ public class AccountsConstants {
 
 
     private AccountsConstants() {
-        // restrict instantiation
     }
 
     public static final String  SAVINGS = "Savings";

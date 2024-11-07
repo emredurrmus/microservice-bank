@@ -1,0 +1,17 @@
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\audit\AuditAwareImpl.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\CardsApplication.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\constants\CardsConstants.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\controller\CardsController.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\dto\CardsContactInfoDto.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\dto\CardsDto.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\dto\ErrorResponseDto.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\dto\ResponseDto.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\entity\BaseEntity.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\entity\Cards.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\exception\CardAlreadyExistsException.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\exception\GlobalExceptionHandler.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\exception\ResourceNotFoundException.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\mapper\CardsMapper.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\repository\CardsRepository.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\service\ICardsService.java
+C:\Users\emred\workspaces\spring-microservice\cards\src\main\java\com\bank\cards\service\impl\CardsServiceImpl.java
