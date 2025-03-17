@@ -1,5 +1,4 @@
 services:
-
   network-deploy-service:
     networks:
       - emredurrmus
@@ -15,7 +14,7 @@ services:
       interval: 10s
       start_period: 10s
     environment:
-      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
 
   microservice-base-config:
     extends:
@@ -24,7 +23,6 @@ services:
       resources:
         limits:
           memory: 700m
-
 
   microservice-configserver-config:
     extends:
@@ -35,3 +33,14 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: prod
       SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071/"
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+
+  microservice-eureka-config:
+    extends:
+      service: microservice-configserver-config
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/

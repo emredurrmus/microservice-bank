@@ -2,6 +2,7 @@ package com.bank.loans.controller;
 
 import com.bank.loans.constants.LoansConstants;
 import com.bank.loans.dto.ErrorResponseDto;
+import com.bank.loans.dto.LoansContactInfoDto;
 import com.bank.loans.dto.LoansDto;
 import com.bank.loans.dto.ResponseDto;
 import com.bank.loans.service.ILoansService;
@@ -14,6 +15,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +35,13 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class LoansController {
 
+    private static final Logger logger = LoggerFactory.getLogger(LoansController.class);
+
     private ILoansService iLoansService;
+
+    @Autowired
+    private LoansContactInfoDto loansContactInfoDto;
+
 
     @Operation(
             summary = "Create Loan REST API",
@@ -80,9 +90,10 @@ public class LoansController {
     }
     )
     @GetMapping("/fetch")
-    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestParam
-                                                               @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
+    public ResponseEntity<LoansDto> fetchLoanDetails(@RequestHeader("bank-correlation-id") String correlationId,
+            @RequestParam @Pattern(regexp="(^$|[0-9]{10})",message = "Mobile number must be 10 digits")
                                                                String mobileNumber) {
+        logger.debug("bank-correlation-id: {}", correlationId);
         LoansDto loansDto = iLoansService.fetchLoan(mobileNumber);
         return ResponseEntity.status(HttpStatus.OK).body(loansDto);
     }
@@ -160,5 +171,11 @@ public class LoansController {
                     .body(new ResponseDto(LoansConstants.STATUS_417, LoansConstants.MESSAGE_417_DELETE));
         }
     }
+
+    @GetMapping("/contact-info")
+    public ResponseEntity<LoansContactInfoDto> getContactInfo() {
+        return ResponseEntity.status(HttpStatus.OK).body(loansContactInfoDto);
+    }
+
 
 }

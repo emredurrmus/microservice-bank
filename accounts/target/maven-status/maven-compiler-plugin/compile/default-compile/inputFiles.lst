@@ -20,7 +20,9 @@ C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\ac
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\mapper\CustomerMapper.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\repository\AccountRepository.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\repository\CustomerRepository.java
+C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\client\CardsFallback.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\client\CardsFeignClient.java
+C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\client\LoansFallback.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\client\LoansFeignClient.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\IAccountService.java
 C:\Users\emred\workspaces\spring-microservice\accounts\src\main\java\com\bank\accounts\service\ICustomerService.java

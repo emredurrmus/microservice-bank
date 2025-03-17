@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 2s
+      discovery:
+        locator:
+          enabled: false
+          lowerCaseServiceId: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: "http://keycloak:7080/realms/master/protocol/openid-connect/certs"
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+
+
+
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Bank Gateway Server Application"
+    version: "1.0"
+
+logging:
+  level:
+    com:
+      bank:
+        gatewayserver: debug
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 2
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10000
+
